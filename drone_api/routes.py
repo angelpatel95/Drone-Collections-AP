@@ -162,7 +162,7 @@ def delete_drone(current_user_token, id):
     drone = Drone.query.get(id)
     db.session.delete(drone)
     db.session.commit()
-    response = drone.schema.dump(drone)
+    response = drone_schema.dump(drone)
     return jsonify(response)
 
 
